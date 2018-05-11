@@ -308,7 +308,7 @@ def hack_command(curr_cmd, head, tail, params):
                 nested_pr("Well since you asked so politely, sure...", hack_name)
 
                 process()
-                
+
                 nested_pr("You are acting a bit strange today...", hack_name)
 
                 process(3)
@@ -362,9 +362,11 @@ def home():
         elif head == "hack":
             if params[1:-1] in DELETED and is_string(params):
                 pr("I'm sorry, that service has been deleted.")
+                continue
 
             if params[1:-1] in UNAVAILABLE and is_string(params):
                 pr("I'm sorry, that service is unavailable.")
+                continue
 
             hack_command(curr_cmd, head, tail, params)
 
